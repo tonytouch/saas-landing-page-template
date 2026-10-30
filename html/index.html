@@ -3,1060 +3,407 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Gifted Generation | Premier Painting &amp; Decorating Services</title>
-    <meta name="description" content="The Gifted Generation delivers bespoke interior and exterior painting, specialist wallpaper hanging, and residential staging with impeccable craftsmanship and clean daily handovers." />
+    <title>The Gifted Generation | Painting, Decorating &amp; Home Improvements</title>
+    <meta name="description" content="The Gifted Generation: painting & decorating, plastering, carpentry, kitchen and bathroom installation, tiling, flooring, electrical, plumbing and car bodywork. Fully insured. Call 07733 845775." />
+    <meta name="theme-color" content="#0b0d12" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta property="og:title" content="The Gifted Generation" />
+    <meta property="og:description" content="Your Future is Yours to Create. Fully insured trades: decorating, plastering, carpentry, kitchens, bathrooms, tiling, flooring, electrical, plumbing and car bodywork." />
+    <meta property="og:image" content="https://thegiftedgeneration.org/assets/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lobster&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-script: "Lobster", Georgia, cursive;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-gold: var(--gold);
+  --color-orange: var(--orange);
 }
 
 :root {
-  --radius: 0.625rem;
-  /* Warm architectural palette */
-  --background: oklch(0.985 0.008 85);       /* Warm linen cream */
-  --foreground: oklch(0.200 0.012 50);       /* Deep espresso charcoal */
-  --card: oklch(1 0 0);                      /* Crisp pure white */
-  --card-foreground: oklch(0.200 0.012 50);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.200 0.012 50);
-  --primary: oklch(0.320 0.025 50);          /* Rich heritage bronze/slate */
-  --primary-foreground: oklch(0.985 0.008 85);
-  --secondary: oklch(0.950 0.012 85);        /* Warm stone tint */
-  --secondary-foreground: oklch(0.250 0.015 50);
-  --muted: oklch(0.955 0.008 85);            /* Subtle warm gray */
-  --muted-foreground: oklch(0.500 0.015 60);  /* Soft architectural gray */
-  --accent: oklch(0.720 0.120 75);           /* Brass & artisan gold */
-  --accent-foreground: oklch(0.200 0.012 50);
-  --border: oklch(0.910 0.010 80);           /* Elegant stone border */
-  --gold: oklch(0.680 0.140 75);             /* Rich gold badge */
-}
-
-.dark {
-  --background: oklch(0.160 0.015 50);
-  --foreground: oklch(0.960 0.008 85);
-  --card: oklch(0.200 0.018 50);
-  --card-foreground: oklch(0.960 0.008 85);
-  --popover: oklch(0.200 0.018 50);
-  --popover-foreground: oklch(0.960 0.008 85);
-  --primary: oklch(0.720 0.120 75);
-  --primary-foreground: oklch(0.160 0.015 50);
-  --secondary: oklch(0.240 0.018 50);
-  --secondary-foreground: oklch(0.960 0.008 85);
-  --muted: oklch(0.240 0.018 50);
-  --muted-foreground: oklch(0.680 0.015 60);
-  --accent: oklch(0.720 0.120 75);
-  --accent-foreground: oklch(0.160 0.015 50);
-  --border: oklch(0.270 0.015 50);
+  /* Flyer palette: midnight black, gold, paint-splash orange */
+  --background: #0b0d12;
+  --foreground: #ffffff;
+  --card: #12151c;
+  --muted-foreground: #b9bcc6;
+  --border: #262a35;
+  --gold: #ffc21a;
+  --orange: #ff8a00;
 }
     </style>
   </head>
-  <body class="bg-background font-sans text-foreground antialiased selection:bg-accent/30 selection:text-foreground">
+  <body class="bg-background font-sans text-foreground antialiased selection:bg-gold selection:text-black">
 <style>
-  @keyframes df-rise { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: translateY(0) } }
-  @keyframes df-marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
-  .df-rise { animation: df-rise .7s cubic-bezier(.16,1,.3,1) both }
-  .df-rise-2 { animation: df-rise .7s cubic-bezier(.16,1,.3,1) .08s both }
-  .df-marquee { animation: df-marquee 32s linear infinite }
-  @media (prefers-reduced-motion: reduce) { .df-rise, .df-rise-2, .df-marquee { animation: none } }
-  [data-landing] [data-page] { display: none }
-  [data-landing] [data-page].is-active { display: block }
+  @keyframes tg-rise { from { opacity: 0; transform: translateY(14px) } to { opacity: 1; transform: translateY(0) } }
+  .tg-rise { animation: tg-rise .7s cubic-bezier(.16,1,.3,1) both }
+  .tg-rise-2 { animation: tg-rise .7s cubic-bezier(.16,1,.3,1) .1s both }
+  @media (prefers-reduced-motion: reduce) { .tg-rise, .tg-rise-2 { animation: none } }
+
+  .tg-gold-text {
+    background: linear-gradient(180deg, #fff3b0 0%, #ffc21a 45%, #e08a00 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .tg-silver-text {
+    background: linear-gradient(180deg, #ffffff 0%, #e4e7ee 50%, #9aa1ad 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  /* Paint-splash edges echoing the flyer */
+  .tg-splash {
+    background:
+      radial-gradient(60% 45% at 0% 0%, rgba(255,138,0,.30), transparent 70%),
+      radial-gradient(45% 40% at 100% 10%, rgba(255,194,26,.22), transparent 70%),
+      radial-gradient(50% 45% at 100% 100%, rgba(255,138,0,.20), transparent 70%),
+      radial-gradient(40% 35% at 0% 100%, rgba(255,194,26,.14), transparent 70%);
+  }
+  .tg-ring { box-shadow: 0 0 0 2px var(--gold), 0 0 22px rgba(255,194,26,.25) inset; }
+  .tg-banner { clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%); }
 </style>
 
-<div class="min-h-screen bg-background font-sans text-foreground" data-landing>
-
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <aside class="border-b border-border/80 bg-secondary/80 backdrop-blur-sm">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-2 text-xs">
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-accent/20 px-2 py-0.5 font-semibold text-accent-foreground text-[11px]">
-          <span class="h-1.5 w-1.5 rounded-full bg-amber-600"></span> Now Booking
-        </span>
-        <span class="hidden text-muted-foreground sm:inline">Residential &amp; Commercial projects across London &amp; Home Counties.</span>
-      </div>
-      <div class="flex items-center gap-4 font-medium text-foreground">
-        <a href="tel:07733845775" class="flex items-center gap-1.5 hover:text-amber-700 transition-colors">
-          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>07733 845 775</span>
-        </a>
-        <span class="text-border">|</span>
-        <a href="#" data-nav="contact" class="hover:text-amber-700 transition-colors font-semibold">Free Consultation &rarr;</a>
-      </div>
-    </div>
-  </aside>
-
-  <!-- MAIN HEADER -->
+  <!-- HEADER -->
   <header class="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-md">
-    <div class="mx-auto flex h-18 max-w-6xl items-center justify-between px-6">
-      
-      <!-- Brand Logo -->
-      <a href="#" data-nav="home" class="flex cursor-pointer items-center gap-3 group">
-        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground text-background shadow-sm transition-transform group-hover:scale-105">
-          <!-- Stylized Painter's Brush / Architectural Arch -->
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/>
-            <path d="M16 16l4-4"/>
-            <path d="m19 13 2-2a3 3 0 0 0-4-4l-2 2"/>
-            <path d="M7 21a2 2 0 0 0 3-3"/>
-          </svg>
-        </div>
-        <div>
-          <span class="block text-base font-bold tracking-tight text-foreground font-serif">The Gifted Generation</span>
-          <span class="block text-[11px] font-medium tracking-wider uppercase text-muted-foreground">Painting &amp; Decorating</span>
-        </div>
+    <div class="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <a href="#top" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="" class="h-12 w-auto" width="360" height="416" />
+        <span class="leading-tight">
+          <span class="block text-sm font-black uppercase tracking-wide tg-gold-text sm:text-base">The Gifted Generation</span>
+          <span class="block font-script text-xs text-muted-foreground sm:text-sm">Your Future is Yours to Create.</span>
+        </span>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden items-center gap-7 lg:flex">
-        <a href="#" data-nav="home" class="cursor-pointer text-[13.5px] font-medium text-foreground transition-colors hover:text-amber-700">Home</a>
-        <a href="#" data-nav="features" class="cursor-pointer text-[13.5px] font-medium text-muted-foreground transition-colors hover:text-foreground">Services</a>
-        <a href="#" data-nav="docs" class="cursor-pointer text-[13.5px] font-medium text-muted-foreground transition-colors hover:text-foreground">Portfolio</a>
-        <a href="#" data-nav="pricing" class="cursor-pointer text-[13.5px] font-medium text-muted-foreground transition-colors hover:text-foreground">Packages &amp; Pricing</a>
-        <a href="#" data-nav="about" class="cursor-pointer text-[13.5px] font-medium text-muted-foreground transition-colors hover:text-foreground">Our Process</a>
-        <a href="#" data-nav="contact" class="cursor-pointer text-[13.5px] font-medium text-muted-foreground transition-colors hover:text-foreground">Contact</a>
+      <nav class="hidden items-center gap-7 text-sm font-semibold lg:flex">
+        <a href="#why" class="text-muted-foreground transition-colors hover:text-gold">Why Us</a>
+        <a href="#services" class="text-muted-foreground transition-colors hover:text-gold">Services</a>
+        <a href="#how" class="text-muted-foreground transition-colors hover:text-gold">How It Works</a>
+        <a href="#contact" class="text-muted-foreground transition-colors hover:text-gold">Contact</a>
       </nav>
 
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/447733845775" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3.5 py-2 text-[13px] font-semibold text-foreground hover:bg-muted transition-colors shadow-xs">
-          <svg class="h-4 w-4 text-emerald-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.93 1.38-.5.08-1.14.12-3.69-.93-2.96-1.22-4.86-4.24-5.01-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.45.27-.29.6-.36.8-.36.2 0 .4 0 .58.01.19.01.44-.07.69.52.25.6.86 2.08.93 2.23.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.44.53-.15.15-.3.32-.13.62.17.3 1.39 2.28 3.01 3.71 1.05.93 1.94 1.22 2.24 1.37.3.15.48.13.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.15.28.11 1.78.84 2.09.99.31.15.51.23.59.36.08.13.08.76-.16 1.44z"/></svg>
-          <span>WhatsApp Us</span>
+      <div class="flex items-center gap-2">
+        <a href="tel:07733845775" class="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-bold text-black transition-opacity hover:opacity-90">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="hidden sm:inline">07733 845775</span>
+          <span class="sm:hidden">Call</span>
         </a>
-        <a href="#" data-nav="contact" class="inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-lg bg-foreground px-4 py-2 text-[13px] font-semibold text-background hover:opacity-90 shadow-sm transition-opacity">
-          <span>Get Free Estimate</span>
-          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <button class="-mr-1 rounded-md p-2 text-muted-foreground hover:bg-muted lg:hidden" data-nav-toggle aria-label="Toggle navigation">
-          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
       </div>
-
     </div>
-
-    <!-- Mobile Nav Dropdown -->
-    <nav data-mobile-nav class="hidden space-y-1 border-t border-border bg-background px-6 py-4 lg:hidden">
-      <a href="#" data-nav="home" class="block cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted">Home</a>
-      <a href="#" data-nav="features" class="block cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Services</a>
-      <a href="#" data-nav="docs" class="block cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Portfolio</a>
-      <a href="#" data-nav="pricing" class="block cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Packages &amp; Pricing</a>
-      <a href="#" data-nav="about" class="block cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Our Process</a>
-      <a href="#" data-nav="contact" class="block cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Contact &amp; Quotes</a>
-    </nav>
   </header>
 
-  <!-- ============================================================ -->
-  <!-- PAGE: HOME                                                   -->
-  <!-- ============================================================ -->
-  <section data-page="home" class="is-active">
-    <main class="mx-auto max-w-6xl border-x border-border bg-card/40">
-      
-      <!-- HERO SECTION -->
-      <section class="border-b border-border px-6 pt-16 pb-20 sm:px-14 lg:px-20 text-center relative overflow-hidden">
-        
-        <!-- Subtle background accent glow -->
-        <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-accent/15 blur-3xl"></div>
+  <main id="top">
 
-        <div class="df-rise inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-3.5 py-1 backdrop-blur shadow-xs mb-6">
-          <span class="flex h-2 w-2 rounded-full bg-amber-600"></span>
-          <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Bespoke Painting &amp; Decorating Specialists</span>
-        </div>
-
-        <h1 class="df-rise mx-auto max-w-4xl font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-foreground">
-          Transforming spaces into timeless, inspiring homes.
+    <!-- HERO -->
+    <section class="tg-splash relative overflow-hidden border-b border-border">
+      <div class="mx-auto max-w-6xl px-4 pt-14 pb-16 text-center sm:px-6 sm:pt-20 sm:pb-20">
+        <img src="assets/logo.png" alt="The Gifted Generation logo" class="tg-rise mx-auto h-40 w-auto drop-shadow-[0_10px_30px_rgba(255,138,0,.25)] sm:h-52" width="360" height="416" />
+        <h1 class="tg-rise mt-6 leading-none">
+          <span class="block font-script text-5xl tg-gold-text sm:text-6xl">The</span>
+          <span class="block text-5xl font-black uppercase tracking-tight tg-gold-text sm:text-7xl lg:text-8xl">Gifted</span>
+          <span class="block text-4xl font-black uppercase tracking-tight tg-silver-text sm:text-6xl lg:text-7xl">Generation</span>
         </h1>
+        <div class="mx-auto mt-5 h-1 w-48 rounded-full bg-gradient-to-r from-transparent via-gold to-transparent sm:w-72"></div>
+        <p class="tg-rise-2 mt-5 text-xl font-semibold text-foreground sm:text-2xl">Your Future is Yours to Create.</p>
 
-        <p class="df-rise-2 mx-auto mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-muted-foreground font-light">
-          From high-end residential sanctuaries to distinguished commercial spaces, <strong class="font-semibold text-foreground">The Gifted Generation</strong> delivers flawless painting, artisan wallpapering, and bespoke finishes with complete peace of mind.
-        </p>
-
-        <!-- CTAs -->
-        <div class="df-rise-2 mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-          <a href="#" data-nav="contact" class="w-full sm:w-auto inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-foreground px-6 py-3.5 text-sm font-semibold text-background hover:opacity-90 shadow-md transition-all">
-            <span>Request a Free Fixed Quote</span>
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <!-- Contact panel (as on the flyer) -->
+        <div class="tg-rise-2 mx-auto mt-10 max-w-xl rounded-3xl border-2 border-gold/80 bg-card/80 p-5 text-left backdrop-blur sm:p-6">
+          <a href="tel:07733845775" class="flex items-center gap-4 rounded-2xl p-2 transition-colors hover:bg-white/5">
+            <span class="tg-ring flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-gold">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="text-2xl font-extrabold tracking-wide sm:text-3xl">07733 845775</span>
           </a>
-          <a href="#" data-nav="docs" class="w-full sm:w-auto inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-muted transition-colors shadow-xs">
-            <svg class="h-4 w-4 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-            <span>View Our Portfolio</span>
+          <a href="mailto:info@thegiftedgeneration.org" class="mt-2 flex items-center gap-4 rounded-2xl p-2 transition-colors hover:bg-white/5">
+            <span class="tg-ring flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-gold">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <span class="min-w-0 break-all text-base font-bold sm:text-xl">info@thegiftedgeneration.org</span>
           </a>
         </div>
 
-        <!-- QUICK INTERACTIVE ESTIMATE TEASER CARD -->
-        <div class="df-rise-2 mx-auto mt-12 max-w-2xl overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm text-left">
-          <div class="flex items-center justify-between border-b border-border pb-4">
-            <div>
-              <p class="font-serif text-lg font-bold text-foreground">Instant Project Estimate Guide</p>
-              <p class="text-xs text-muted-foreground">Select your requirements for an immediate ballpark range</p>
-            </div>
-            <span class="rounded-full bg-accent/20 px-3 py-1 font-mono text-[11px] font-semibold text-amber-900">
-              Zero Commitment
+        <div class="tg-rise-2 mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-black transition-opacity hover:opacity-90 sm:w-auto">
+            Get a Free Quote
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/447733845775" target="_blank" rel="noopener" class="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-border px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-foreground transition-colors hover:border-gold sm:w-auto">
+            <svg class="h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.930 1.38-.5.08-1.14.12-3.69-.93-2.96-1.22-4.86-4.24-5.01-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.45.27-.29.6-.36.8-.36.2 0 .4 0 .58.01.19.01.44-.07.69.52.25.6.86 2.08.93 2.230.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.44.53-.15.15-.3.32-.13.62.17.3 1.39 2.28 3.01 3.71 1.05.93 1.94 1.22 2.24 1.37.3.15.48.13.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.15.28.11 1.78.84 2.09.99.31.15.51.23.59.36.08.13.08.76-.16 1.44z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US: the four flyer badges -->
+    <section id="why" class="scroll-mt-20 border-b border-border">
+      <div class="mx-auto grid max-w-6xl grid-cols-2 gap-y-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:divide-x lg:divide-gold/40">
+        <div class="flex flex-col items-center px-4 text-center">
+          <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full text-gold">
+            <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <p class="mt-4 text-sm font-extrabold uppercase tracking-wide">Fully<br />Insured</p>
+        </div>
+        <div class="flex flex-col items-center px-4 text-center">
+          <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full text-gold">
+            <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <p class="mt-4 text-sm font-extrabold uppercase tracking-wide">Experienced<br />Professionals</p>
+        </div>
+        <div class="flex flex-col items-center px-4 text-center">
+          <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full text-gold">
+            <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
+          </span>
+          <p class="mt-4 text-sm font-extrabold uppercase tracking-wide">Competitive<br />Pricing</p>
+        </div>
+        <div class="flex flex-col items-center px-4 text-center">
+          <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full text-gold">
+            <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+          </span>
+          <p class="mt-4 text-sm font-extrabold uppercase tracking-wide">Customer<br />Satisfaction</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES: all ten from the flyer -->
+    <section id="services" class="tg-splash scroll-mt-20 border-b border-border">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div class="flex items-center gap-3">
+          <h2 class="tg-banner bg-gradient-to-r from-gold to-orange py-3 pr-12 pl-5 text-3xl font-black uppercase italic tracking-tight text-black sm:text-5xl">Our Services</h2>
+          <span class="text-4xl font-black italic text-gold sm:text-6xl">//</span>
+        </div>
+        <p class="mt-5 max-w-2xl text-base text-muted-foreground">One team for the whole job. Tell us what you need and we'll put the right trades on it.</p>
+
+        <ul class="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- paint roller -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="6" x="2" y="2" rx="2"/><path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect width="4" height="6" x="8" y="16" rx="1"/></svg>
             </span>
-          </div>
-
-          <div class="mt-5 grid gap-4 sm:grid-cols-3">
-            <div>
-              <label class="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Service Required</label>
-              <select id="heroService" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground focus:border-foreground focus:outline-none">
-                <option value="interior">Interior Painting</option>
-                <option value="wallpaper">Specialist Wallpaper</option>
-                <option value="exterior">Exterior Refresh</option>
-                <option value="full">Full Property Makeover</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Number of Rooms</label>
-              <select id="heroRooms" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground focus:border-foreground focus:outline-none">
-                <option value="1">1 Room</option>
-                <option value="2">2 - 3 Rooms</option>
-                <option value="4">4 - 6 Rooms</option>
-                <option value="entire">Entire Property (7+)</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">Estimated Guide</label>
-              <div class="mt-1.5 flex h-9.5 items-center justify-between rounded-lg bg-secondary/80 px-3 py-2 text-sm font-bold text-foreground">
-                <span id="heroPriceOutput">From £380</span>
-                <span class="text-[11px] font-normal text-muted-foreground">1-2 Days</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-5 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-border pt-4">
-            <p class="text-xs text-muted-foreground flex items-center gap-1.5">
-              <svg class="h-4 w-4 text-emerald-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>Includes surface prep, 2 coats premium finish &amp; full cleanup.</span>
-            </p>
-            <a href="#" data-nav="contact" class="w-full sm:w-auto rounded-lg bg-foreground px-4 py-2 text-center text-xs font-semibold text-background hover:opacity-90">
-              Book On-Site Survey &rarr;
-            </a>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- CREDIBILITY / MARQUEE BAR -->
-      <section class="border-b border-border bg-secondary/40 py-7 overflow-hidden">
-        <div class="relative overflow-hidden" style="mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)">
-          <div class="df-marquee flex w-max items-center gap-x-12 opacity-85">
-            <span class="shrink-0 flex items-center gap-2 text-sm font-semibold tracking-tight">
-              <span class="text-amber-600">★★★★★</span> 5.0 Star Rated on Google &amp; Houzz
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Painting &amp;<br />Decorating</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- plastering trowel -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 14 6l4 4L7 21H3z"/><path d="m16 8 4-4"/><path d="M19 3l2 2"/></svg>
             </span>
-            <span class="text-border">✦</span>
-            <span class="shrink-0 text-sm font-semibold tracking-tight">£5M Public Liability Insured</span>
-            <span class="text-border">✦</span>
-            <span class="shrink-0 text-sm font-semibold tracking-tight">Dustless Sanding Clean Guarantee</span>
-            <span class="text-border">✦</span>
-            <span class="shrink-0 text-sm font-semibold tracking-tight">Farrow &amp; Ball, Little Greene &amp; Dulux Approved</span>
-            <span class="text-border">✦</span>
-            <span class="shrink-0 text-sm font-semibold tracking-tight">Fixed Price Written Quotations</span>
-            <span class="text-border">✦</span>
-            <span class="shrink-0 text-sm font-semibold tracking-tight">12-Month Workmanship Warranty</span>
-            <span class="text-border">✦</span>
-            <!-- duplicate for marquee loop -->
-            <span class="shrink-0 flex items-center gap-2 text-sm font-semibold tracking-tight">
-              <span class="text-amber-600">★★★★★</span> 5.0 Star Rated on Google &amp; Houzz
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Plastering</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- hammer -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg>
             </span>
-            <span class="text-border">✦</span>
-            <span class="shrink-0 text-sm font-semibold tracking-tight">£5M Public Liability Insured</span>
-            <span class="text-border">✦</span>
-            <span class="shrink-0 text-sm font-semibold tracking-tight">Dustless Sanding Clean Guarantee</span>
-          </div>
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Carpentry</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- kitchen units -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect width="20" height="7" x="2" y="2" rx="1"/><rect width="20" height="11" x="2" y="11" rx="1"/><path d="M12 2v7M12 11v11M9 5.5h0M15 5.5h0M8 14h2M14 14h2"/></svg>
+            </span>
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Kitchen<br />Installation</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- bath -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><path d="M10 5 8 7"/><path d="M2 12h20"/><path d="M7 19v2M17 19v2"/></svg>
+            </span>
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Bathroom<br />Installation</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- brick / tiles -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="1"/><path d="M3 9h18M3 15h18M12 3v6M8 9v6M16 9v6M12 15v6"/></svg>
+            </span>
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Tiling</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- floor panels -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect width="7.5" height="7.5" x="3" y="3" rx="1"/><rect width="7.5" height="7.5" x="13.5" y="3" rx="1"/><rect width="7.5" height="7.5" x="3" y="13.5" rx="1"/><rect width="7.5" height="7.5" x="13.5" y="13.5" rx="1"/></svg>
+            </span>
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Flooring</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- lightning -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </span>
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Electrical<br />Services</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- pipe & tap -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v6a4 4 0 0 0 4 4h6a2 2 0 0 1 2 2v2"/><path d="M8 3v6h6"/><path d="M14 17h4"/><path d="M16 20v.5M16 22v.01"/><path d="M2 3h8"/></svg>
+            </span>
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Plumbing<br />Services</span>
+          </li>
+          <li class="flex flex-col items-center text-center">
+            <span class="tg-ring flex h-20 w-20 items-center justify-center rounded-full bg-card text-gold">
+              <!-- car -->
+              <svg class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+            </span>
+            <span class="mt-3 text-xs font-extrabold uppercase tracking-wide sm:text-sm">Car<br />Bodywork</span>
+          </li>
+        </ul>
+
+        <div class="mt-14 text-center">
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-black transition-opacity hover:opacity-90">
+            Ask About a Job
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- CORE SERVICES GRID -->
-      <section class="border-b border-border px-6 py-20 sm:px-14 lg:px-20">
-        <div class="text-center max-w-2xl mx-auto">
-          <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-800">Our Expertise</span>
-          <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold tracking-tight text-foreground">Precision craftsmanship in every stroke.</h2>
-          <p class="mt-3 text-base text-muted-foreground">Whether refreshing a beloved period townhouse or styling an upscale modern apartment, we handle every detail with care.</p>
+    <!-- HOW IT WORKS -->
+    <section id="how" class="scroll-mt-20 border-b border-border">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <h2 class="text-center text-3xl font-black uppercase tracking-tight sm:text-4xl">How It <span class="tg-gold-text">Works</span></h2>
+        <ol class="mt-12 grid gap-6 md:grid-cols-3">
+          <li class="rounded-2xl border border-border bg-card p-7">
+            <span class="text-4xl font-black tg-gold-text">01</span>
+            <h3 class="mt-3 text-lg font-extrabold uppercase">Get in Touch</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Call, WhatsApp or email us, or send the form below with a few details about the job.</p>
+          </li>
+          <li class="rounded-2xl border border-border bg-card p-7">
+            <span class="text-4xl font-black tg-gold-text">02</span>
+            <h3 class="mt-3 text-lg font-extrabold uppercase">Free Quote</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">We talk through what you want and give you a clear, competitive price before any work starts.</p>
+          </li>
+          <li class="rounded-2xl border border-border bg-card p-7">
+            <span class="text-4xl font-black tg-gold-text">03</span>
+            <h3 class="mt-3 text-lg font-extrabold uppercase">Job Done Right</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Our experienced, fully insured team does the work and makes sure you're happy with the finish.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="tg-splash scroll-mt-20">
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div class="text-center">
+          <h2 class="text-3xl font-black uppercase tracking-tight sm:text-5xl">Get a <span class="tg-gold-text">Free Quote</span></h2>
+          <p class="mx-auto mt-4 max-w-xl text-base text-muted-foreground">Tell us about the job and we'll get back to you. Prefer to talk? Call or WhatsApp us on 07733 845775.</p>
         </div>
 
-        <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          
-          <!-- Card 1 -->
-          <div class="group rounded-2xl border border-border bg-card p-7 transition-all hover:border-foreground/40 hover:shadow-md">
-            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-foreground">
-              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/><path d="M16 16l4-4"/><path d="m19 13 2-2a3 3 0 0 0-4-4l-2 2"/></svg>
+        <div class="mt-12 grid gap-8 lg:grid-cols-[1fr_340px]">
+          <form id="quoteForm" class="rounded-3xl border border-border bg-card p-6 sm:p-8">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="block">
+                <span class="text-xs font-bold uppercase tracking-wide text-muted-foreground">Your Name *</span>
+                <input name="name" type="text" required autocomplete="name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none" />
+              </label>
+              <label class="block">
+                <span class="text-xs font-bold uppercase tracking-wide text-muted-foreground">Phone Number *</span>
+                <input name="phone" type="tel" required autocomplete="tel" class="mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none" />
+              </label>
+              <label class="block">
+                <span class="text-xs font-bold uppercase tracking-wide text-muted-foreground">Postcode / Area</span>
+                <input name="area" type="text" autocomplete="postal-code" class="mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none" />
+              </label>
+              <label class="block">
+                <span class="text-xs font-bold uppercase tracking-wide text-muted-foreground">Service Needed *</span>
+                <select name="service" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none">
+                  <option>Painting &amp; Decorating</option>
+                  <option>Plastering</option>
+                  <option>Carpentry</option>
+                  <option>Kitchen Installation</option>
+                  <option>Bathroom Installation</option>
+                  <option>Tiling</option>
+                  <option>Flooring</option>
+                  <option>Electrical Services</option>
+                  <option>Plumbing Services</option>
+                  <option>Car Bodywork</option>
+                  <option>Something else / more than one</option>
+                </select>
+              </label>
             </div>
-            <h3 class="mt-5 font-serif text-xl font-bold tracking-tight text-foreground">Interior Painting &amp; Woodwork</h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-              Meticulous preparation of walls, ceilings, coving, skirting, and doors. Smooth multi-coat finishes using eco-friendly low-VOC paints.
-            </p>
-            <ul class="mt-4 space-y-1.5 text-xs text-muted-foreground">
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Fine spray &amp; roller finishes</li>
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Kitchen cabinet respraying</li>
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Period plasterwork restoration</li>
-            </ul>
-            <a href="#" data-nav="features" class="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-foreground hover:text-amber-800">Learn more &rarr;</a>
-          </div>
+            <label class="mt-4 block">
+              <span class="text-xs font-bold uppercase tracking-wide text-muted-foreground">About the Job</span>
+              <textarea name="details" rows="4" class="mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none"></textarea>
+            </label>
+            <button type="submit" class="mt-6 w-full rounded-full bg-gold py-3.5 text-sm font-extrabold uppercase tracking-wide text-black transition-opacity hover:opacity-90">
+              Send My Enquiry
+            </button>
+            <p class="mt-3 text-center text-xs text-muted-foreground">This opens your email app with your details filled in, ready to send to info@thegiftedgeneration.org.</p>
+          </form>
 
-          <!-- Card 2 -->
-          <div class="group rounded-2xl border border-border bg-card p-7 transition-all hover:border-foreground/40 hover:shadow-md">
-            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-foreground">
-              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            </div>
-            <h3 class="mt-5 font-serif text-xl font-bold tracking-tight text-foreground">Specialist Wallpaper Hanging</h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-              Expert hanging of complex designer patterns, silk wallcoverings, textured grasscloth, vinyls, and panoramic murals with seamless joins.
-            </p>
-            <ul class="mt-4 space-y-1.5 text-xs text-muted-foreground">
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Precise pattern alignment</li>
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Feature walls &amp; alcoves</li>
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Full old-paper removal &amp; lining</li>
-            </ul>
-            <a href="#" data-nav="features" class="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-foreground hover:text-amber-800">Learn more &rarr;</a>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="group rounded-2xl border border-border bg-card p-7 transition-all hover:border-foreground/40 hover:shadow-md">
-            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-foreground">
-              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <h3 class="mt-5 font-serif text-xl font-bold tracking-tight text-foreground">Exterior Restorations</h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-              Durable weather-resistant coatings for exterior masonry, wooden sash windows, render, porches, railings, and front doors.
-            </p>
-            <ul class="mt-4 space-y-1.5 text-xs text-muted-foreground">
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Weatherproof masonry paints</li>
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> High-gloss timber treatments</li>
-              <li class="flex items-center gap-2"><svg class="h-3.5 w-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Full power wash &amp; fungicidal wash</li>
-            </ul>
-            <a href="#" data-nav="features" class="mt-6 inline-flex items-center gap-1.5 text-xs font-bold text-foreground hover:text-amber-800">Learn more &rarr;</a>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- WHY CHOOSE THE GIFTED GENERATION (OUR 4 PROMISES) -->
-      <section class="border-b border-border bg-secondary/30 px-6 py-20 sm:px-14 lg:px-20">
-        <div class="grid gap-12 lg:grid-cols-2 items-center">
-          <div>
-            <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-800">The Gifted Standard</span>
-            <h2 class="mt-3 font-serif text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-              We treat your property like our own masterpiece.
-            </h2>
-            <p class="mt-4 text-base leading-relaxed text-muted-foreground">
-              Too many decorators rush prep work and leave a mess behind. We built our reputation on obsessive attention to detail, respectful tidy working habits, and punctual delivery.
-            </p>
-
-            <div class="mt-8 space-y-6">
-              <div class="flex gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-foreground text-background">
-                  <span class="font-bold text-sm">01</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-foreground">Dustless Sanding Technology</h4>
-                  <p class="text-sm text-muted-foreground mt-1">Our HEPA-filtered extractors capture 99% of dust at source, keeping your home clean and air breathable.</p>
-                </div>
-              </div>
-
-              <div class="flex gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-foreground text-background">
-                  <span class="font-bold text-sm">02</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-foreground">Complete Furniture &amp; Floor Protection</h4>
-                  <p class="text-sm text-muted-foreground mt-1">High-grade adhesive floor protectors, clean dust sheets, and plastic draping for all furniture before any paint opens.</p>
-                </div>
-              </div>
-
-              <div class="flex gap-4">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-foreground text-background">
-                  <span class="font-bold text-sm">03</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-foreground">Fixed Price Guarantee</h4>
-                  <p class="text-sm text-muted-foreground mt-1">No surprise extras. The price quoted on your survey is the price you pay on completion.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="mt-10">
-              <a href="#" data-nav="contact" class="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-3 text-sm font-semibold text-background hover:opacity-90">
-                <span>Book Your Free Consultation</span>
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Interactive Review Highlights -->
           <div class="space-y-4">
-            <div class="rounded-2xl border border-border bg-card p-6 shadow-xs">
-              <div class="flex items-center gap-1 text-amber-600 mb-2">★★★★★</div>
-              <p class="text-sm leading-relaxed text-foreground italic">
-                &ldquo;The Gifted Generation transformed our 4-bedroom Victorian home in Kensington. Flawless lines, impeccably hung Cole &amp; Son wallpaper, and they vacuumed up every single afternoon. Absolutely sterling service.&rdquo;
-              </p>
-              <div class="mt-4 flex items-center justify-between border-t border-border pt-3">
-                <p class="text-xs font-bold text-foreground">Eleanor &amp; Marcus V.</p>
-                <span class="text-[11px] text-muted-foreground">Victorian Townhouse Full Decor</span>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-border bg-card p-6 shadow-xs">
-              <div class="flex items-center gap-1 text-amber-600 mb-2">★★★★★</div>
-              <p class="text-sm leading-relaxed text-foreground italic">
-                &ldquo;Reliable, on time, and completely transparent with pricing. They repainted our kitchen cabinets and open-plan living room; it feels like moving into a brand new luxury apartment.&rdquo;
-              </p>
-              <div class="mt-4 flex items-center justify-between border-t border-border pt-3">
-                <p class="text-xs font-bold text-foreground">David K.</p>
-                <span class="text-[11px] text-muted-foreground">Kitchen &amp; Living Room Renovation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CALL TO ACTION BANNER -->
-      <section class="border-b border-border px-6 py-20 text-center sm:px-16">
-        <h2 class="mx-auto max-w-2xl font-serif text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
-          Ready to bring new life to your space?
-        </h2>
-        <p class="mx-auto mt-4 max-w-xl text-base text-muted-foreground">
-          Let’s discuss your vision. Contact us today for a prompt, friendly on-site survey and a written fixed-price quotation.
-        </p>
-        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="#" data-nav="contact" class="inline-flex w-full sm:w-auto items-center justify-center rounded-lg bg-foreground px-6 py-3.5 text-sm font-semibold text-background hover:opacity-90">
-            Request an Estimate Now
-          </a>
-          <a href="tel:07733845775" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-muted">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>Call 07733 845 775</span>
-          </a>
-        </div>
-      </section>
-
-    </main>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- PAGE: SERVICES                                               -->
-  <!-- ============================================================ -->
-  <section data-page="features">
-    <main class="mx-auto max-w-6xl border-x border-border bg-card/40">
-      <section class="border-b border-border px-6 py-16 text-center sm:px-16 lg:px-28">
-        <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-800">Our Services</span>
-        <h1 class="mx-auto mt-4 max-w-3xl font-serif text-4xl sm:text-5xl font-bold tracking-tight">Full-Spectrum Decorating Solutions</h1>
-        <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">Every room, surface, and exterior structure completed with master craftsmanship.</p>
-      </section>
-
-      <section class="px-6 py-14 sm:px-14 lg:px-20 space-y-12">
-        
-        <!-- Service 1 -->
-        <div class="grid gap-8 lg:grid-cols-2 items-center rounded-2xl border border-border bg-card p-8">
-          <div>
-            <span class="rounded-full bg-secondary px-3 py-1 font-mono text-xs font-semibold text-muted-foreground">Service 01</span>
-            <h2 class="mt-3 font-serif text-2xl sm:text-3xl font-bold">Residential Interior Decorating</h2>
-            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
-              We provide comprehensive interior painting services for houses, apartments, and heritage estates. Our process begins with thorough repairs—skimming cracked plaster, sanding woodwork to satin smoothness, and caulking gaps—ensuring a showroom finish that lasts.
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-foreground">
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Walls, ceilings, coving, architraves &amp; baseboards</li>
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Doors, banisters, radiators &amp; window frames</li>
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Stain-blocking &amp; damp treatment primers</li>
-            </ul>
-            <div class="mt-6">
-              <a href="#" data-nav="contact" class="inline-flex rounded-lg bg-foreground px-4 py-2 text-xs font-semibold text-background hover:opacity-90">Book Interior Survey &rarr;</a>
-            </div>
-          </div>
-          <div class="rounded-xl border border-border bg-secondary/60 p-6">
-            <h4 class="font-serif text-lg font-bold">Included in Every Interior Project:</h4>
-            <div class="mt-4 space-y-3 text-xs text-muted-foreground leading-relaxed">
-              <div class="flex gap-2"><strong>✓ Full Masking:</strong> Floors, windows, switches &amp; sockets neatly taped.</div>
-              <div class="flex gap-2"><strong>✓ Surface Prep:</strong> Filled nail holes, plaster blemishes &amp; hairline settlement cracks.</div>
-              <div class="flex gap-2"><strong>✓ Premium Paints:</strong> 2 complete top coats of certified durable emulsion.</div>
-              <div class="flex gap-2"><strong>✓ Daily Tidy:</strong> Vacuumed surfaces, stacked gear, ready to live in every evening.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="grid gap-8 lg:grid-cols-2 items-center rounded-2xl border border-border bg-card p-8">
-          <div>
-            <span class="rounded-full bg-secondary px-3 py-1 font-mono text-xs font-semibold text-muted-foreground">Service 02</span>
-            <h2 class="mt-3 font-serif text-2xl sm:text-3xl font-bold">Artisan Wallpaper &amp; Wallcoverings</h2>
-            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Wallpapering requires mathematical precision, sharp cuts, and steady hands. Our experienced paperhangers handle all brands—from British heritage houses like William Morris to contemporary designer textures.
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-foreground">
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Textured grasscloth, vinyl, foil &amp; fabric papers</li>
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> High-definition bespoke mural installations</li>
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Complete wall cross-lining for flat seamless adhesion</li>
-            </ul>
-            <div class="mt-6">
-              <a href="#" data-nav="contact" class="inline-flex rounded-lg bg-foreground px-4 py-2 text-xs font-semibold text-background hover:opacity-90">Request Wallpaper Quote &rarr;</a>
-            </div>
-          </div>
-          <div class="rounded-xl border border-border bg-secondary/60 p-6">
-            <h4 class="font-serif text-lg font-bold">Specialist Paper Brands Handled:</h4>
-            <div class="mt-4 grid grid-cols-2 gap-2 text-xs font-semibold text-foreground">
-              <span class="rounded-md border border-border bg-background p-2">Farrow &amp; Ball</span>
-              <span class="rounded-md border border-border bg-background p-2">Cole &amp; Son</span>
-              <span class="rounded-md border border-border bg-background p-2">Sanderson &amp; Morris</span>
-              <span class="rounded-md border border-border bg-background p-2">Harlequin / Scion</span>
-              <span class="rounded-md border border-border bg-background p-2">Osborne &amp; Little</span>
-              <span class="rounded-md border border-border bg-background p-2">Photowall Murals</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="grid gap-8 lg:grid-cols-2 items-center rounded-2xl border border-border bg-card p-8">
-          <div>
-            <span class="rounded-full bg-secondary px-3 py-1 font-mono text-xs font-semibold text-muted-foreground">Service 03</span>
-            <h2 class="mt-3 font-serif text-2xl sm:text-3xl font-bold">Commercial &amp; Property Staging</h2>
-            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Offices, boutiques, hospitality venues, and pre-sale property styling. We offer flexible working schedules (including evenings and weekends) to complete your commercial turnaround with zero disruption to daily business.
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-foreground">
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Out-of-hours &amp; weekend execution</li>
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> High-traffic scrubbable commercial paints</li>
-              <li class="flex items-center gap-2"><svg class="h-4 w-4 text-amber-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg> Landlord end-of-tenancy fast refreshes</li>
-            </ul>
-            <div class="mt-6">
-              <a href="#" data-nav="contact" class="inline-flex rounded-lg bg-foreground px-4 py-2 text-xs font-semibold text-background hover:opacity-90">Commercial Inquiries &rarr;</a>
-            </div>
-          </div>
-          <div class="rounded-xl border border-border bg-secondary/60 p-6">
-            <h4 class="font-serif text-lg font-bold">Commercial Accreditations:</h4>
-            <div class="mt-4 space-y-2 text-xs text-muted-foreground">
-              <p>• £5,000,000 Public &amp; Employers Liability Cover</p>
-              <p>• CSCS Certified Decorators</p>
-              <p>• Formal RAMS (Risk Assessments &amp; Method Statements) provided</p>
-              <p>• Transparent invoicing with 30-day corporate terms available</p>
-            </div>
-          </div>
-        </div>
-
-      </section>
-    </main>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- PAGE: PORTFOLIO                                              -->
-  <!-- ============================================================ -->
-  <section data-page="docs">
-    <main class="mx-auto max-w-6xl border-x border-border bg-card/40">
-      <section class="border-b border-border px-6 py-16 text-center sm:px-16 lg:px-28">
-        <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-800">Gallery &amp; Case Studies</span>
-        <h1 class="mx-auto mt-4 max-w-3xl font-serif text-4xl sm:text-5xl font-bold tracking-tight">Recent Transformations</h1>
-        <p class="mx-auto mt-4 max-w-xl text-base text-muted-foreground">Explore real projects completed by The Gifted Generation across residential and boutique commercial spaces.</p>
-      </section>
-
-      <section class="px-6 py-14 sm:px-14 lg:px-20">
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          
-          <!-- Project 1 -->
-          <div class="overflow-hidden rounded-2xl border border-border bg-card shadow-xs group">
-            <div class="aspect-4/3 w-full bg-secondary/80 flex items-center justify-center p-6 text-center border-b border-border">
-              <div>
-                <span class="rounded-full bg-background px-3 py-1 text-[11px] font-semibold text-foreground">Victorian Living Suite</span>
-                <p class="mt-2 text-xs text-muted-foreground">Kensington &middot; London</p>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="font-serif text-lg font-bold text-foreground">Period Townhouse Restoration</h3>
-              <p class="mt-2 text-xs text-muted-foreground leading-relaxed">
-                Complete ceiling rose repair, intricate coving restoration, and 3-coat finish in Farrow &amp; Ball ‘Hague Blue’ with Estate Eggshell on panelled woodwork.
-              </p>
-              <div class="mt-4 flex items-center justify-between border-t border-border pt-3 text-[11px] font-semibold">
-                <span class="text-amber-800">Duration: 5 Days</span>
-                <a href="#" data-nav="contact" class="hover:underline">Inquire About Similar &rarr;</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="overflow-hidden rounded-2xl border border-border bg-card shadow-xs group">
-            <div class="aspect-4/3 w-full bg-secondary/80 flex items-center justify-center p-6 text-center border-b border-border">
-              <div>
-                <span class="rounded-full bg-background px-3 py-1 text-[11px] font-semibold text-foreground">Master Bedroom</span>
-                <p class="mt-2 text-xs text-muted-foreground">Richmond &middot; Surrey</p>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="font-serif text-lg font-bold text-foreground">Bespoke Mural Wall Installation</h3>
-              <p class="mt-2 text-xs text-muted-foreground leading-relaxed">
-                Installation of continuous panoramic botanical mural wallpaper behind custom headboard with zero visible joins.
-              </p>
-              <div class="mt-4 flex items-center justify-between border-t border-border pt-3 text-[11px] font-semibold">
-                <span class="text-amber-800">Duration: 2 Days</span>
-                <a href="#" data-nav="contact" class="hover:underline">Inquire About Similar &rarr;</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="overflow-hidden rounded-2xl border border-border bg-card shadow-xs group">
-            <div class="aspect-4/3 w-full bg-secondary/80 flex items-center justify-center p-6 text-center border-b border-border">
-              <div>
-                <span class="rounded-full bg-background px-3 py-1 text-[11px] font-semibold text-foreground">Open-Plan Kitchen</span>
-                <p class="mt-2 text-xs text-muted-foreground">Chelsea &middot; London</p>
-              </div>
-            </div>
-            <div class="p-6">
-              <h3 class="font-serif text-lg font-bold text-foreground">Kitchen Cabinet Respraying</h3>
-              <p class="mt-2 text-xs text-muted-foreground leading-relaxed">
-                Factory-grade polyurethane spray on 24 cabinet doors and center island in Little Greene ‘Obsidian Green’. Transformed kitchen without replacement.
-              </p>
-              <div class="mt-4 flex items-center justify-between border-t border-border pt-3 text-[11px] font-semibold">
-                <span class="text-amber-800">Duration: 4 Days</span>
-                <a href="#" data-nav="contact" class="hover:underline">Inquire About Similar &rarr;</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="mt-14 rounded-2xl border border-border bg-secondary/50 p-8 text-center max-w-2xl mx-auto">
-          <h3 class="font-serif text-xl font-bold">Have a specific design or wallpaper in mind?</h3>
-          <p class="mt-2 text-xs text-muted-foreground">Send us your room dimensions or inspiration photos and we will provide a precise breakdown of materials and labor.</p>
-          <div class="mt-5">
-            <a href="#" data-nav="contact" class="inline-flex rounded-lg bg-foreground px-5 py-2.5 text-xs font-semibold text-background hover:opacity-90">Upload Inspiration &amp; Get Quote &rarr;</a>
-          </div>
-        </div>
-      </section>
-    </main>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- PAGE: PRICING & PACKAGES                                     -->
-  <!-- ============================================================ -->
-  <section data-page="pricing">
-    <main class="mx-auto max-w-6xl border-x border-border bg-card/40">
-      <section class="border-b border-border px-6 py-16 text-center sm:px-16 lg:px-28">
-        <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-800">Transparent Rates</span>
-        <h1 class="mx-auto mt-4 max-w-3xl font-serif text-4xl sm:text-5xl font-bold tracking-tight">Clear, Honest Pricing Packages</h1>
-        <p class="mx-auto mt-4 max-w-xl text-base text-muted-foreground">Every quotation is fixed in writing before work begins. No hidden callouts, no unexpected surprises.</p>
-      </section>
-
-      <section class="px-6 py-14 sm:px-14 lg:px-20">
-        <div class="grid items-start gap-6 lg:grid-cols-3">
-          
-          <!-- Tier 1 -->
-          <div class="rounded-2xl border border-border bg-card p-7 shadow-xs">
-            <h3 class="font-serif text-xl font-bold">Single Room Refresh</h3>
-            <p class="mt-1.5 text-xs text-muted-foreground">Ideal for bedrooms, home offices, and nursery makeovers.</p>
-            <div class="mt-5 flex items-baseline gap-1">
-              <span class="font-serif text-4xl font-extrabold">£380</span>
-              <span class="text-xs text-muted-foreground">/ room (guide)</span>
-            </div>
-            <a href="#" data-nav="contact" class="mt-6 inline-flex w-full items-center justify-center rounded-lg border border-border px-4 py-2.5 text-xs font-semibold hover:bg-muted transition-colors">
-              Request Room Estimate
+            <a href="tel:07733845775" class="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-gold">
+              <span class="tg-ring flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-gold">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.070 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>
+                <span class="block text-xs font-bold uppercase tracking-wide text-muted-foreground">Call</span>
+                <span class="block text-lg font-extrabold">07733 845775</span>
+              </span>
             </a>
-            <ul class="mt-6 space-y-2.5 text-xs text-muted-foreground">
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Full wall &amp; ceiling preparation</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Skirting board &amp; door frame enamel</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> 2 top coats premium emulsion</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> HEPA dustless sanding &amp; cleanup</li>
-            </ul>
-          </div>
-
-          <!-- Tier 2 (Popular) -->
-          <div class="rounded-2xl border-2 border-foreground bg-card p-7 shadow-lg relative">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-foreground px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-background">
-              Most Requested
-            </div>
-            <h3 class="font-serif text-xl font-bold">Multi-Room / Full Floor</h3>
-            <p class="mt-1.5 text-xs text-muted-foreground">For living rooms, hallways, stairs &amp; multiple bedrooms.</p>
-            <div class="mt-5 flex items-baseline gap-1">
-              <span class="font-serif text-4xl font-extrabold">£1,450</span>
-              <span class="text-xs text-muted-foreground">/ 3 rooms (guide)</span>
-            </div>
-            <a href="#" data-nav="contact" class="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-foreground px-4 py-2.5 text-xs font-semibold text-background hover:opacity-90 transition-opacity">
-              Book Home Survey
+            <a href="https://wa.me/447733845775" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-gold">
+              <span class="tg-ring flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-emerald-400">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.910-4.45 9.910-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+              </span>
+              <span>
+                <span class="block text-xs font-bold uppercase tracking-wide text-muted-foreground">WhatsApp</span>
+                <span class="block text-lg font-extrabold">Message us</span>
+              </span>
             </a>
-            <ul class="mt-6 space-y-2.5 text-xs text-muted-foreground">
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Everything in Single Room</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> High-traffic hallway &amp; banister woodwork</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Free on-site designer color consultation</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Trade paint discount passed on in full</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> 12-Month full workmanship guarantee</li>
-            </ul>
-          </div>
-
-          <!-- Tier 3 -->
-          <div class="rounded-2xl border border-border bg-card p-7 shadow-xs">
-            <h3 class="font-serif text-xl font-bold">Entire Property / Bespoke</h3>
-            <p class="mt-1.5 text-xs text-muted-foreground">Complete home overhauls, commercial spaces, and exterior refits.</p>
-            <div class="mt-5 flex items-baseline gap-1">
-              <span class="font-serif text-4xl font-extrabold">Custom</span>
-              <span class="text-xs text-muted-foreground">Fixed Quote</span>
-            </div>
-            <a href="#" data-nav="contact" class="mt-6 inline-flex w-full items-center justify-center rounded-lg border border-border px-4 py-2.5 text-xs font-semibold hover:bg-muted transition-colors">
-              Consult With Our Team
+            <a href="mailto:info@thegiftedgeneration.org" class="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-colors hover:border-gold">
+              <span class="tg-ring flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-gold">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block text-xs font-bold uppercase tracking-wide text-muted-foreground">Email</span>
+                <span class="block break-all text-sm font-extrabold">info@thegiftedgeneration.org</span>
+              </span>
             </a>
-            <ul class="mt-6 space-y-2.5 text-xs text-muted-foreground">
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Dedicated decorating team</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Out-of-hours &amp; phased schedules</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Plastering, wallpapering &amp; spray specialists</li>
-              <li class="flex gap-2"><svg class="h-4 w-4 shrink-0 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg> Dedicated project manager</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- FAQ -->
-        <div class="mx-auto mt-16 max-w-2xl">
-          <h2 class="text-center font-serif text-2xl font-bold">Frequently Asked Questions</h2>
-          <div class="mt-6 divide-y divide-border overflow-hidden rounded-xl border border-border bg-card">
-            <div class="p-5">
-              <p class="text-sm font-semibold">Do you supply the paint, or do I purchase it?</p>
-              <p class="mt-1.5 text-xs leading-relaxed text-muted-foreground">We can do either. We have trade accounts with Farrow &amp; Ball, Dulux Trade, Johnstone's, and Little Greene, passing trade discounts directly to you. If you already have your own paint, we are happy to apply labor-only pricing.</p>
-            </div>
-            <div class="p-5">
-              <p class="text-sm font-semibold">How clean do you keep the house while working?</p>
-              <p class="mt-1.5 text-xs leading-relaxed text-muted-foreground">Cleanliness is our top priority. We use dust-extracting sanders, carpet protection film, heavy-duty drop cloths, and vacuum every evening before handover.</p>
-            </div>
-            <div class="p-5">
-              <p class="text-sm font-semibold">Are you fully insured?</p>
-              <p class="mt-1.5 text-xs leading-relaxed text-muted-foreground">Yes, The Gifted Generation carries £5,000,000 Public Liability Insurance, providing total protection for your property and possessions.</p>
-            </div>
           </div>
         </div>
+      </div>
+    </section>
+  </main>
 
-      </section>
-    </main>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- PAGE: ABOUT & PROCESS                                        -->
-  <!-- ============================================================ -->
-  <section data-page="about">
-    <main class="mx-auto max-w-6xl border-x border-border bg-card/40">
-      <section class="border-b border-border px-6 py-16 text-center sm:px-16 lg:px-28">
-        <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-800">Our Story &amp; Values</span>
-        <h1 class="mx-auto mt-4 max-w-3xl font-serif text-4xl sm:text-5xl font-bold tracking-tight">Craftsmanship You Can Trust</h1>
-        <p class="mx-auto mt-4 max-w-xl text-base text-muted-foreground">The Gifted Generation was founded with one clear ambition: to raise the standard of painting and decorating through reliability, cleanliness, and artistic flair.</p>
-      </section>
-
-      <section class="px-6 py-14 sm:px-14 lg:px-20">
-        <div class="grid gap-12 lg:grid-cols-2 items-center">
-          <div class="space-y-4 text-sm leading-relaxed text-muted-foreground">
-            <p>
-              Decorating your home should be exciting, not stressful. We know the common complaints in the trades: contractors who don't show up, cutting corners on preparation, and leaving paint splatter on floors and fixtures.
-            </p>
-            <p>
-              At <strong>The Gifted Generation</strong>, we do things differently. We invest heavily in professional dustless preparation machinery, use only premium durable paints, and maintain transparent, daily communication with every homeowner.
-            </p>
-            <p>
-              Whether it’s a bespoke feature wall in your drawing room or a full exterior restoration, our team brings genuine passion to every square meter we touch.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4">
-            <div class="rounded-2xl border border-border bg-card p-6 text-center">
-              <p class="font-serif text-4xl font-bold text-foreground">100%</p>
-              <p class="mt-1 text-xs text-muted-foreground">Written Fixed Price</p>
-            </div>
-            <div class="rounded-2xl border border-border bg-card p-6 text-center">
-              <p class="font-serif text-4xl font-bold text-foreground">£5M</p>
-              <p class="mt-1 text-xs text-muted-foreground">Public Liability</p>
-            </div>
-            <div class="rounded-2xl border border-border bg-card p-6 text-center">
-              <p class="font-serif text-4xl font-bold text-foreground">5.0 ★</p>
-              <p class="mt-1 text-xs text-muted-foreground">Customer Rating</p>
-            </div>
-            <div class="rounded-2xl border border-border bg-card p-6 text-center">
-              <p class="font-serif text-4xl font-bold text-foreground">12 Mo</p>
-              <p class="mt-1 text-xs text-muted-foreground">Workmanship Guarantee</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- PAGE: CONTACT & ESTIMATE REQUEST (INTERACTIVE FORM)          -->
-  <!-- ============================================================ -->
-  <section data-page="contact">
-    <main class="mx-auto max-w-6xl border-x border-border bg-card/40">
-      <section class="border-b border-border px-6 py-16 text-center sm:px-16 lg:px-28">
-        <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-800">Get in Touch</span>
-        <h1 class="mx-auto mt-4 max-w-3xl font-serif text-4xl sm:text-5xl font-bold tracking-tight">Request Your Free Fixed Quote</h1>
-        <p class="mx-auto mt-4 max-w-xl text-base text-muted-foreground">Fill out the quick form below or call us directly. We respond to all inquiries within 2 hours during business days.</p>
-      </section>
-
-      <section class="px-6 py-14 sm:px-14 lg:px-20">
-        <div class="grid gap-12 lg:grid-cols-[1fr_360px]">
-          
-          <!-- INTERACTIVE FORM -->
-          <div class="rounded-2xl border border-border bg-card p-8 shadow-xs">
-            <h2 class="font-serif text-2xl font-bold">Tell us about your project</h2>
-            <p class="text-xs text-muted-foreground mt-1">We’ll review your details and contact you to arrange a free on-site survey or provide an initial estimate.</p>
-
-            <form id="quoteForm" class="mt-6 space-y-4">
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label class="block text-xs font-semibold text-foreground">Full Name *</label>
-                  <input type="text" required placeholder="e.g. Sarah Jenkins" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm focus:border-foreground focus:outline-none" />
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-foreground">Phone Number *</label>
-                  <input type="tel" required placeholder="e.g. 07123 456789" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm focus:border-foreground focus:outline-none" />
-                </div>
-              </div>
-
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label class="block text-xs font-semibold text-foreground">Email Address *</label>
-                  <input type="email" required placeholder="e.g. sarah@example.com" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm focus:border-foreground focus:outline-none" />
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-foreground">Postcode / City *</label>
-                  <input type="text" required placeholder="e.g. SW3 4AA or Richmond" class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm focus:border-foreground focus:outline-none" />
-                </div>
-              </div>
-
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label class="block text-xs font-semibold text-foreground">Service Required *</label>
-                  <select class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm focus:border-foreground focus:outline-none">
-                    <option>Interior Painting &amp; Decorating</option>
-                    <option>Specialist Wallpaper Hanging</option>
-                    <option>Exterior Painting &amp; Masonry</option>
-                    <option>Commercial / Office Decorating</option>
-                    <option>Full Home Transformation</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-foreground">Approximate Timeline</label>
-                  <select class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm focus:border-foreground focus:outline-none">
-                    <option>As soon as possible</option>
-                    <option>Within the next 2-4 weeks</option>
-                    <option>Next month or flexible</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-xs font-semibold text-foreground">Project Details / Scope</label>
-                <textarea rows="4" placeholder="Please describe the rooms, approximate sizes, current condition, or any specific paint brands you'd like to use..." class="mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm focus:border-foreground focus:outline-none"></textarea>
-              </div>
-
-              <button type="submit" class="w-full rounded-lg bg-foreground py-3 text-sm font-semibold text-background hover:opacity-90 shadow-sm transition-opacity">
-                Submit Request for Free Estimate
-              </button>
-
-              <div id="formSuccess" class="hidden rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-4 text-center">
-                <p class="text-sm font-bold text-emerald-800">✓ Thank you! Your request has been received.</p>
-                <p class="text-xs text-muted-foreground mt-1">Our decorating specialist will contact you shortly to confirm details.</p>
-              </div>
-            </form>
-          </div>
-
-          <!-- DIRECT CONTACT INFO -->
-          <div class="space-y-6">
-            <div class="rounded-2xl border border-border bg-card p-6">
-              <h3 class="font-serif text-lg font-bold">Contact Directly</h3>
-              <p class="text-xs text-muted-foreground mt-1">Prefer to talk through your project right now?</p>
-
-              <div class="mt-5 space-y-4">
-                <div class="flex items-start gap-3">
-                  <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-secondary text-foreground">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-muted-foreground uppercase">Telephone</p>
-                    <a href="tel:07733845775" class="text-sm font-bold text-foreground hover:text-amber-800">07733 845 775</a>
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-3">
-                  <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-secondary text-foreground">
-                    <svg class="h-4 w-4 text-emerald-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.78 14.07c-.24.68-1.39 1.3-1.93 1.38-.5.08-1.14.12-3.69-.93-2.96-1.22-4.86-4.24-5.01-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.45.27-.29.6-.36.8-.36.2 0 .4 0 .58.01.19.01.44-.07.69.52.25.6.86 2.08.93 2.23.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.18-.31.39-.44.53-.15.15-.3.32-.13.62.17.3 1.39 2.28 3.01 3.71 1.05.93 1.94 1.22 2.24 1.37.3.15.48.13.66-.08.18-.21.78-.91.99-1.22.21-.31.42-.26.7-.15.28.11 1.78.84 2.09.99.31.15.51.23.59.36.08.13.08.76-.16 1.44z"/></svg>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-muted-foreground uppercase">WhatsApp</p>
-                    <a href="https://wa.me/447733845775" target="_blank" rel="noopener" class="text-sm font-bold text-foreground hover:text-emerald-700">Chat with us directly</a>
-                  </div>
-                </div>
-
-                <div class="flex items-start gap-3">
-                  <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-secondary text-foreground">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-muted-foreground uppercase">Email</p>
-                    <a href="mailto:info@thegiftedgeneration.org" class="text-sm font-bold text-foreground hover:text-amber-800">info@thegiftedgeneration.org</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="rounded-2xl border border-border bg-secondary/60 p-6">
-              <h4 class="font-serif text-base font-bold">Service Coverage</h4>
-              <p class="text-xs text-muted-foreground mt-2 leading-relaxed">
-                Operating throughout London, Greater London, Surrey, Kent, and the Home Counties. Free on-site visits for all projects within 25 miles.
-              </p>
-              <div class="mt-4 border-t border-border pt-3">
-                <p class="text-xs font-bold text-foreground">Working Hours:</p>
-                <p class="text-xs text-muted-foreground mt-0.5">Monday – Saturday: 8:00 AM – 6:30 PM</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-    </main>
-  </section>
-
-  <!-- ============================================================ -->
-  <!-- FOOTER                                                       -->
-  <!-- ============================================================ -->
+  <!-- FOOTER -->
   <footer class="border-t border-border bg-card">
-    <div class="mx-auto max-w-6xl px-6 py-14">
-      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-        
-        <div class="lg:col-span-2">
-          <a href="#" data-nav="home" class="flex cursor-pointer items-center gap-3">
-            <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-foreground text-background">
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/><path d="M16 16l4-4"/><path d="m19 13 2-2a3 3 0 0 0-4-4l-2 2"/></svg>
-            </div>
-            <div>
-              <span class="block text-base font-bold tracking-tight text-foreground font-serif">The Gifted Generation</span>
-              <span class="block text-[10px] font-medium tracking-wider uppercase text-muted-foreground">Painting &amp; Decorating</span>
-            </div>
-          </a>
-          <p class="mt-4 max-w-xs text-xs leading-relaxed text-muted-foreground">
-            Bespoke interior and exterior painting, specialist wallpaper hanging, and residential staging with impeccable cleanliness and craftsmanship.
-          </p>
-          <div class="mt-4 flex items-center gap-2">
-            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-            <span class="text-xs text-muted-foreground">Fully Licensed &amp; £5M Insured</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Services</p>
-          <ul class="mt-3 space-y-2 text-xs text-muted-foreground">
-            <li><a href="#" data-nav="features" class="hover:text-foreground">Interior Painting</a></li>
-            <li><a href="#" data-nav="features" class="hover:text-foreground">Wallpaper Installation</a></li>
-            <li><a href="#" data-nav="features" class="hover:text-foreground">Exterior Masonry &amp; Wood</a></li>
-            <li><a href="#" data-nav="features" class="hover:text-foreground">Cabinet Respraying</a></li>
-            <li><a href="#" data-nav="features" class="hover:text-foreground">Commercial Decorating</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Company</p>
-          <ul class="mt-3 space-y-2 text-xs text-muted-foreground">
-            <li><a href="#" data-nav="about" class="hover:text-foreground">Our Story &amp; Values</a></li>
-            <li><a href="#" data-nav="docs" class="hover:text-foreground">Portfolio Showcase</a></li>
-            <li><a href="#" data-nav="pricing" class="hover:text-foreground">Pricing Guide</a></li>
-            <li><a href="#" data-nav="contact" class="hover:text-foreground">Contact &amp; Quotes</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Get In Touch</p>
-          <ul class="mt-3 space-y-2 text-xs text-muted-foreground">
-            <li>Tel: <a href="tel:07733845775" class="hover:text-foreground font-semibold">07733 845 775</a></li>
-            <li>WhatsApp: <a href="https://wa.me/447733845775" target="_blank" rel="noopener" class="hover:text-foreground font-semibold">07733 845 775</a></li>
-            <li>Email: <a href="mailto:info@thegiftedgeneration.org" class="hover:text-foreground font-semibold">info@thegiftedgeneration.org</a></li>
-            <li class="pt-2 text-[11px] text-muted-foreground">thegiftedgeneration.org</li>
-          </ul>
-        </div>
-
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-12 text-center sm:px-6">
+      <img src="assets/logo.png" alt="" class="h-20 w-auto" width="360" height="416" loading="lazy" />
+      <div>
+        <p class="text-lg font-black uppercase tracking-wide tg-gold-text">The Gifted Generation</p>
+        <p class="font-script text-base text-muted-foreground">Your Future is Yours to Create.</p>
       </div>
-
-      <div class="mt-12 flex flex-col sm:flex-row items-center justify-between border-t border-border pt-6 text-xs text-muted-foreground gap-4">
-        <div>&copy; 2026 The Gifted Generation Ltd. All rights reserved.</div>
-        <div class="flex items-center gap-6">
-          <a href="#" data-nav="home" class="hover:text-foreground">Home</a>
-          <a href="#" data-nav="pricing" class="hover:text-foreground">Pricing</a>
-          <a href="#" data-nav="contact" class="hover:text-foreground">Free Quote</a>
-        </div>
+      <p class="max-w-2xl text-xs leading-relaxed text-muted-foreground">
+        Painting &amp; Decorating &middot; Plastering &middot; Carpentry &middot; Kitchen Installation &middot; Bathroom Installation &middot; Tiling &middot; Flooring &middot; Electrical Services &middot; Plumbing Services &middot; Car Bodywork
+      </p>
+      <div class="flex flex-col items-center gap-2 text-sm font-semibold sm:flex-row sm:gap-6">
+        <a href="tel:07733845775" class="hover:text-gold">07733 845775</a>
+        <a href="mailto:info@thegiftedgeneration.org" class="hover:text-gold">info@thegiftedgeneration.org</a>
       </div>
+      <p class="text-xs text-muted-foreground">&copy; 2026 The Gifted Generation. Fully insured.</p>
     </div>
   </footer>
 
-</div>
-
-<!-- INTERACTIVE SCRIPTS -->
 <script>
-  // Page Switching (Vanilla router)
-  document.querySelectorAll("[data-landing]").forEach((root) => {
-    const pages = root.querySelectorAll("[data-page]");
-    const mobileNav = root.querySelector("[data-mobile-nav]");
-    const show = (name) => {
-      pages.forEach((s) => s.classList.toggle("is-active", s.getAttribute("data-page") === name));
-      mobileNav?.classList.add("hidden");
-      if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    root.querySelector("[data-nav-toggle]")?.addEventListener("click", () => mobileNav?.classList.toggle("hidden"));
-
-    root.querySelectorAll("[data-nav]").forEach((a) => a.addEventListener("click", (e) => {
-      e.preventDefault();
-      show(a.getAttribute("data-nav"));
-    }));
-
-    // Hero estimator calculator
-    const heroService = document.getElementById("heroService");
-    const heroRooms = document.getElementById("heroRooms");
-    const heroPriceOutput = document.getElementById("heroPriceOutput");
-
-    const updateHeroEstimate = () => {
-      if (!heroService || !heroRooms || !heroPriceOutput) return;
-      const s = heroService.value;
-      const r = heroRooms.value;
-      let price = "From £380";
-      if (s === "interior") {
-        if (r === "1") price = "From £380";
-        else if (r === "2") price = "From £850";
-        else if (r === "4") price = "From £1,800";
-        else price = "Custom Quote";
-      } else if (s === "wallpaper") {
-        if (r === "1") price = "From £250 / wall";
-        else if (r === "2") price = "From £600";
-        else price = "Custom Quote";
-      } else if (s === "exterior") {
-        price = "From £950 (Survey req.)";
-      } else {
-        price = "Custom Quote";
-      }
-      heroPriceOutput.textContent = price;
-    };
-
-    heroService?.addEventListener("change", updateHeroEstimate);
-    heroRooms?.addEventListener("change", updateHeroEstimate);
-
-    // Form submission mockup
-    const quoteForm = document.getElementById("quoteForm");
-    const formSuccess = document.getElementById("formSuccess");
-    quoteForm?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (formSuccess) {
-        formSuccess.classList.remove("hidden");
-        quoteForm.reset();
-      }
-    });
+  // Quote form: compose an email to the business with the visitor's details
+  document.getElementById("quoteForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const subject = `Quote request: ${f.get("service")}`;
+    const body = [
+      `Name: ${f.get("name")}`,
+      `Phone: ${f.get("phone")}`,
+      `Postcode / area: ${f.get("area") || "-"}`,
+      `Service: ${f.get("service")}`,
+      "",
+      `${f.get("details") || ""}`,
+    ].join("\n");
+    window.location.href = `mailto:info@thegiftedgeneration.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 </script>
   </body>
